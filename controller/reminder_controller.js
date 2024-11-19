@@ -45,7 +45,9 @@ let remindersController = {
   },
 
   delete: (req, res) => {
-    // Implement this code
+    let reminderToFind = req.params.id;
+    database.user.reminders = database.user.reminders.filter(reminder => reminder.id != reminderToFind);
+    res.redirect('/reminders');
   },
 };
 
