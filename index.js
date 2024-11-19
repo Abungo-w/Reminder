@@ -9,6 +9,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: false }));
 
+// app.use((req, res, next) => {
+//   const isLoggedIn = req.isAuthenticated();
+//   next();
+// })
+
 app.set("view engine", "ejs");
 app.use(ejsLayouts);
 
