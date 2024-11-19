@@ -58,9 +58,8 @@ let remindersController = {
 
   delete: (req, res) => {
     let reminderToFind = req.params.id;
-    database.user.reminders = database.user.reminders.filter(reminder => reminder.id != reminderToFind);
+    database.cindy.reminders = database.cindy.reminders.filter(reminder => reminder.id != reminderToFind);
     res.redirect('/reminders');
-  },
-};
+  }}
 
 module.exports = remindersController;
