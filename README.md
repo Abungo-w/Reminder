@@ -18,10 +18,10 @@ I worked on the following tasks:
 
 
 
-Nov 20nd, 2024
+Nov 27nd, 2024
 Amy Chan:
 I worked on the following tasks:
-1. <Insert Some Task Here> - This task is responsible for xyz functionality.
+1. <added a local passport> - This task is to allow the users to login into website with the accounts stored in the database
 2. <Insert Some Task Here> - This task is responsible for xyz functionality.
 3. <Insert Some Task Here> - This task is responsible for xyz functionality.
 
