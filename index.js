@@ -5,6 +5,7 @@ const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
 // const authController = require("./controller/auth_controller");
 const session = require("express-session");
+const { isAdmin } = require('./middleware/checkAuth');
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -69,10 +70,28 @@ app.get("/auth/login", (req, res) => {
   res.render("auth/login")
 });
 // app.post("/register", authController.registerSubmit);
+
 app.post("/auth/login", passport.authenticate("local", {
   successRedirect: "/reminders",
   failureRedirect: "/auth/login",
 }));
+
+app.get("/admin", isAdmin, (req, res) => {
+  const sessions = [];
+
+  for (const sessionId in req.sessionStore.sessions) {
+    const sessionData = JSON.parse(req.sessionStore.sessions[sessionId]);
+    sessions.push({
+      sessionId,
+      userId: sessionData.passport.user,
+    });
+  }
+
+  res.render("admin", {
+    user: req.user,
+    sessions,
+  });
+});
 
 app.listen(3001, function () {
   console.log(

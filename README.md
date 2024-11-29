@@ -33,3 +33,21 @@ I worked on the following tasks:
 1. <Insert Some Task Here> - This task is responsible for xyz functionality.
 2. <Insert Some Task Here> - This task is responsible for xyz functionality.
 3. <Insert Some Task Here> - This task is responsible for xyz functionality.
+
+
+
+Nov 29nd, 2024
+Peter Wu:
+I worked on the following tasks:
+1. <Insert Some Task Here> Changed all the lines that have cindy to req.user - This task is to allow the reminder to access other user's reminder in the database instead of only the user cindy.
+2. <Insert Some Task Here> Added the admin function - Allows users with admin role to destroy sessions
+3. <Insert Some Task Here> - This task is responsible for xyz functionality.
+
+I also needed to research on Youtube and Google the following things:
+1. <Insert Video or Link to thing you needed to research> 
+
+John Chen:
+I worked on the following tasks:
+1. <Insert Some Task Here> - This task is responsible for xyz functionality.
+2. <Insert Some Task Here> - This task is responsible for xyz functionality.
+3. <Insert Some Task Here> - This task is responsible for xyz functionality.
