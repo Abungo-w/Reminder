@@ -1,21 +1,43 @@
-let database = require("../database");
+let {database, userModel } = require("../database");
 
-let authController = {
-  login: (req, res) => {
-    res.render("auth/login");
-  },
+// let authController = {
+//   login: (req, res) => {
+//     res.render("auth/login");
+//   },
 
-  register: (req, res) => {
-    res.render("auth/register");
-  },
+//   register: (req, res) => {
+//     res.render("auth/register");
+//   },
 
-  loginSubmit: (req, res) => {
-    // implement
-  },
+//   loginSubmit: (req, res) => {
+//     res.send('Login successful')
+//   },
+// };
 
-  registerSubmit: (req, res) => {
-    // implement
-  },
+const getUserByEmailIdAndPassword = (email, password) => {
+  let user = userModel.findOne(email);
+  if (user) {
+    if (isUserValid(user, password)) {
+      return user;
+    }
+  }
+  return null;
 };
 
-module.exports = authController;
+const getUserById = (id) => {
+  let user = userModel.findById(id);
+  if (user) {
+    return user;
+  }
+  return null;
+};
+
+function isUserValid(user, password) {
+  return user.password === password;
+}
+
+module.exports = {
+  // authController,
+  getUserByEmailIdAndPassword,
+  getUserById,
+};
