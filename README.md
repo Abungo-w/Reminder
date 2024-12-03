@@ -1,6 +1,6 @@
 # 2520-term-project
 
-Nov 19th, 2024
+Nov 19th, 2024\
 Peter Wu:
 I worked on the following tasks:
 1. <Insert Some Task Here>Worked on adding the edit function - This task is responsible for allowing the user to edit listed reminders.
@@ -11,12 +11,14 @@ I worked on the following tasks:
 
 
 
-Nov 24th, 2024
+Nov 24th, 2024\
+Lucas Huang:
+I worked on the following tasks:
 1. <Importing passport authentification>Worked on adding the passport - This task is responsible for allowing the user be logged in to see their reminders.
   
 
 
-Nov 27nd, 2024
+Nov 27nd, 2024\
 Peter Wu:
 I worked on the following tasks:
 1. <Insert Some Task Here> Added a local passport - This task is to allow the users to login into website with the accounts stored in the database
@@ -24,7 +26,7 @@ I worked on the following tasks:
 I also needed to research on Youtube and Google the following things:
 1. <Insert Video or Link to thing you needed to research> https://www.passportjs.org/packages/passport-local/
 
-Nov 29nd, 2024
+Nov 29nd, 2024\
 Peter Wu:
 I worked on the following tasks:
 1. <Insert Some Task Here> Changed all the lines that have cindy to req.user - This task is to allow the reminder to access other user's reminder in the database instead of only the user cindy.
@@ -33,7 +35,7 @@ I worked on the following tasks:
   
 
 
-Dec 3, 2024
+Dec 3, 2024\
 Peter Wu:
 1. <Insert Some Task Here> changed fake db to prisma db - This task is to transition from a fake database to using a real database
 
