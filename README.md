@@ -51,3 +51,10 @@ I worked on the following tasks:
 1. <Insert Some Task Here> - This task is responsible for xyz functionality.
 2. <Insert Some Task Here> - This task is responsible for xyz functionality.
 3. <Insert Some Task Here> - This task is responsible for xyz functionality.
+
+Dec 3, 2024
+Peter Wu:
+1. <Insert Some Task Here> changed fake db to prisma db - This task is to transition from a fake database to using a real database
+
+I also needed to research on Youtube and Google the following things:
+1. <Insert Video or Link to thing you needed to research> https://www.prisma.io/docs/getting-started/quickstart-sqlite
