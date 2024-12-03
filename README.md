@@ -31,14 +31,14 @@ Peter Wu:
 I worked on the following tasks:
 1. <Insert Some Task Here> Changed all the lines that have cindy to req.user - This task is to allow the reminder to access other user's reminder in the database instead of only the user cindy.
 2. <Insert Some Task Here> Added the admin function - Allows users with admin role to destroy sessions
-3. <Insert Some Task Here> - This task is responsible for xyz functionality.
   
 
 
 Dec 3, 2024\
 Peter Wu:
-1. <Insert Some Task Here> changed fake database to prisma database - This task is to transition from a fake database to using a real database
-2. <Insert Some Task Here> updated reminder_controller so it works with the prisma database - This task is make it so the user can see a list of their reminders, create new reminder, edit reminder, update reminder, and delete reminder in the prisma database
+1. <Insert Some Task Here> changed fake database to prisma database - This task is to transition from a fake database to using a real database.
+2. <Insert Some Task Here> updated reminder_controller so the web server works with the prisma database - This task is make it so the user can see a list of their reminders, create new reminder, edit reminder, update reminder, and delete reminder in the prisma database.
+3. <Insert Some Task Here> updated the checkAuth to check the user roles in the prisma database - This task is to make the isAdmin function in checkAuth to check if the user is a admin or not in the prisma database.
 
 I also needed to research on Youtube and Google the following things:
 1. <Insert Video or Link to thing you needed to research> https://www.prisma.io/docs/getting-started/quickstart-sqlite
