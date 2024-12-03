@@ -37,7 +37,8 @@ I worked on the following tasks:
 
 Dec 3, 2024\
 Peter Wu:
-1. <Insert Some Task Here> changed fake db to prisma db - This task is to transition from a fake database to using a real database
+1. <Insert Some Task Here> changed fake database to prisma database - This task is to transition from a fake database to using a real database
+2. <Insert Some Task Here> updated reminder_controller so it works with the prisma database - This task is make it so the user can see a list of their reminders, create new reminder, edit reminder, update reminder, and delete reminder in the prisma database
 
 I also needed to research on Youtube and Google the following things:
 1. <Insert Video or Link to thing you needed to research> https://www.prisma.io/docs/getting-started/quickstart-sqlite

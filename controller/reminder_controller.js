@@ -15,10 +15,12 @@ let remindersController = {
     res.render("reminder/create");
   },
 
-  listOne: (req, res) => {
-    let reminderToFind = req.params.id;
-    let searchResult = req.user.reminders.find(function (reminder) {
-      return reminder.id == reminderToFind;
+  listOne: async (req, res) => {
+    let reminderToFind = req.params.id
+    let searchResult = await db.reminder.findUnique({
+      where: {
+        id: parseInt(reminderToFind)
+      }
     });
     if (searchResult != undefined) {
       res.render("reminder/single-reminder", { reminderItem: searchResult });
@@ -28,46 +30,54 @@ let remindersController = {
   },
 
   create: async (req, res) => {
-    const userID = req.user.id
     await db.reminder.create({
       data: {
         title: req.body.title,
         description: req.body.description,
         completed: false,
-        user: {connect:{id: userID}}
+        user: {connect: {id: req.user.id}}
       }
     })
-    req.user.reminders.push(reminder);
     res.redirect("/reminders");
   },
 
-  edit: (req, res) => {
-    let reminderToFind = req.params.id;
-    let searchResult = req.user.reminders.find(function (reminder) {
-      return reminder.id == reminderToFind;
+  edit: async (req, res) => {
+    let reminderToFind = req.params.id
+    let searchResult = await db.reminder.findUnique({
+      where: {
+        id: parseInt(reminderToFind)
+      }
     });
     res.render("reminder/edit", { reminderItem: searchResult });
   },
 
-  update: (req, res) => {
+  update: async(req, res) => {
     // implement this code
-    let reminderToFind = req.params.id;
-    let searchResult = req.user.reminders.findIndex(function (reminder) {
-      return reminder.id == reminderToFind;
-    });
-    let reminder = {
-      id: req.params.id,
-      title: req.body.title,
-      description: req.body.description,
-      completed: false,
-    };
-    req.user.reminders[searchResult] = reminder;
+    let reminderToFind = req.params.id
+    let complete = false;
+    if (req.body.completed ===  "true") {
+      complete = true
+    }
+    await db.reminder.update({
+      where: {
+        id: parseInt(reminderToFind)
+      },
+      data: {
+        title: req.body.title,
+        description: req.body.description,
+        completed: complete
+      }
+    })
     res.redirect("/reminders");
   },
 
-  delete: (req, res) => {
+  delete: async (req, res) => {
     let reminderToFind = req.params.id;
-    req.user.reminders = req.user.reminders.filter(reminder => reminder.id != reminderToFind);
+    await db.reminder.delete({
+      where: {
+        id: parseInt(reminderToFind)
+      }
+    })
     res.redirect('/reminders');
   }}
 
