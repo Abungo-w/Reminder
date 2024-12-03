@@ -1,4 +1,5 @@
-let {database, userModel } = require("../database");
+let { userModel } = require("../database");
+
 
 // let authController = {
 //   login: (req, res) => {
@@ -14,8 +15,8 @@ let {database, userModel } = require("../database");
 //   },
 // };
 
-const getUserByEmailIdAndPassword = (email, password) => {
-  let user = userModel.findOne(email);
+const getUserByEmailIdAndPassword = async (email, password) => {
+  let user = await userModel.findOne(email);
   if (user) {
     if (isUserValid(user, password)) {
       return user;
@@ -24,8 +25,8 @@ const getUserByEmailIdAndPassword = (email, password) => {
   return null;
 };
 
-const getUserById = (id) => {
-  let user = userModel.findById(id);
+const getUserById = async (id) => {
+  let user = await userModel.findById(id);
   if (user) {
     return user;
   }
