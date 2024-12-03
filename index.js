@@ -93,6 +93,16 @@ app.get("/admin", isAdmin, (req, res) => {
   });
 });
 
+app.post('/admin/:sessionId', isAdmin, (req, res) => {
+  const sessionId = req.params.sessionId;
+  req.sessionStore.destroy(sessionId, (err) => {
+    if (err) {
+      return res.status(500).send('Could not revoke session');
+    }
+    res.redirect('/admin');
+  });
+});
+
 app.listen(3001, function () {
   console.log(
     "Server running. Visit: localhost:3001/reminders in your browser 🚀"
