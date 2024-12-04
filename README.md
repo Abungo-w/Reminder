@@ -44,5 +44,9 @@ I worked on the following tasks:
 I also needed to research on Youtube and Google the following things:
 1. <Insert Video or Link to thing you needed to research> https://www.prisma.io/docs/getting-started/quickstart-sqlite
 
-
+Lucas Huang:\
+I worked on the following tasks:
+1. <Insert Some Task Here> Removed reminder list, create from sign in page for users not signed in.
+2. <Insert Some Task Here> redirected users to home page
+2. <Insert Some Task Here> added admin panel
 

@@ -35,6 +35,17 @@ const passport = require("./middleware/passport");
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Attach user to res.locals
+app.use((req, res, next) => {
+  res.locals.user = req.user || null; 
+  next();
+});
+
+app.get('/navbar', (req, res) => {
+  res.render('partials/navbar', { user: req.user });
+});
+
+
 app.use((req, res, next) => {
   console.log(`User details are: `);
   console.log(req.user);
@@ -102,6 +113,11 @@ app.post('/admin/:sessionId', isAdmin, (req, res) => {
     res.redirect('/admin');
   });
 });
+
+app.get('/navbar', (req, res) => {
+  res.render('partials/navbar', { user: req.user });
+});
+
 
 app.listen(3001, function () {
   console.log(
