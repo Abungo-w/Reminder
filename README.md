@@ -54,7 +54,7 @@ I worked on the following tasks:
 2. <Insert Some Task Here> added admin panel
 
 Dec 5, 2024\
-Peter Wu:\
+Peter Wu:
 1. <Insert Some Task Here> Fixed redirection issues - This task is to fix the issue when a user that tries to view the "/reminders" page, it would cause the web server to crash if the user is not logged in. The samething for when an admin revokes a user. It crashes the web server when that user reloads while on the "/reminders" page. Changed it so it would redirect the user to the login page.  
 
 
