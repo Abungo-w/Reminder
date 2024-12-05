@@ -1,20 +1,5 @@
 let { userModel } = require("../database");
 
-
-// let authController = {
-//   login: (req, res) => {
-//     res.render("auth/login");
-//   },
-
-//   register: (req, res) => {
-//     res.render("auth/register");
-//   },
-
-//   loginSubmit: (req, res) => {
-//     res.send('Login successful')
-//   },
-// };
-
 const getUserByEmailIdAndPassword = async (email, password) => {
   let user = await userModel.findOne(email);
   if (user) {
@@ -38,7 +23,6 @@ function isUserValid(user, password) {
 }
 
 module.exports = {
-  // authController,
   getUserByEmailIdAndPassword,
   getUserById,
 };
