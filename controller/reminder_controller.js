@@ -52,7 +52,6 @@ let remindersController = {
   },
 
   update: async(req, res) => {
-    // implement this code
     let reminderToFind = req.params.id
     let complete = false;
     if (req.body.completed ===  "true") {

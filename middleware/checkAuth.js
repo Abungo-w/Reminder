@@ -17,10 +17,10 @@ module.exports = {
   isAdmin: async function (req, res, next) {
     const user = await db.user.findUnique({
       where: {
-        id: req.user.id, // Assume `req.user.id` holds the authenticated user's ID
+        id: req.user.id, 
       },
       select: {
-        role: true, // Fetch only the `role` field
+        role: true, 
       },
     });
     if (req.isAuthenticated() && user.role === 'admin') {
