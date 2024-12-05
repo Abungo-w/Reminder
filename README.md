@@ -5,6 +5,9 @@ Peter Wu:\
 I worked on the following tasks:
 1. <Insert Some Task Here>Worked on adding the edit function - This task is responsible for allowing the user to edit listed reminders.
 
+I also needed to research on Youtube and Google the following things:
+1. <Insert Video or Link to thing you needed to research> The 3 term project prep video on learning hub.
+
 Lucas Huang:\
 I worked on the following tasks:
 1. <Delete reminder button>Worked on adding the delete function - This task is responsible for allowing the user to delete the listed reminders.
@@ -49,4 +52,10 @@ I worked on the following tasks:
 1. <Insert Some Task Here> Removed reminder list, create from sign in page for users not signed in.
 2. <Insert Some Task Here> redirected users to home page
 2. <Insert Some Task Here> added admin panel
+
+Dec 5, 2024\
+Peter Wu:\
+1. <Insert Some Task Here> Fixed redirection issues - This task is to fix the issue when a user that tries to view the "/reminders" page, it would cause the web server to crash if the user is not logged in. The samething for when an admin revokes a user. It crashes the web server when that user reloads while on the "/reminders" page. Changed it so it would redirect the user to the login page.  
+
+
 
