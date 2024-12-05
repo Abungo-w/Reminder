@@ -5,7 +5,7 @@ const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
 // const authController = require("./controller/auth_controller");
 const session = require("express-session");
-const { isAdmin } = require('./middleware/checkAuth');
+const { isAdmin, ensureAuthenticated, forwardAuthenticated } = require('./middleware/checkAuth');
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -41,10 +41,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/navbar', (req, res) => {
-  res.render('partials/navbar', { user: req.user });
-});
-
 
 app.use((req, res, next) => {
   console.log(`User details are: `);
@@ -59,7 +55,7 @@ app.use((req, res, next) => {
 });
 // Routes start here
 
-app.get("/reminders", reminderController.list);
+app.get("/reminders", ensureAuthenticated, reminderController.list);
 
 app.get("/reminder/new", reminderController.new);
 
@@ -77,7 +73,7 @@ app.post("/reminder/delete/:id", reminderController.delete);
 
 // We will fix this soon.
 // app.get("/register", authController.register);
-app.get("/auth/login", (req, res) => {
+app.get("/auth/login", forwardAuthenticated, (req, res) => {
   res.render("auth/login")
 });
 // app.post("/register", authController.registerSubmit);
@@ -87,7 +83,7 @@ app.post("/auth/login", passport.authenticate("local", {
   failureRedirect: "/auth/login",
 }));
 
-app.get("/admin", isAdmin, (req, res) => {
+app.get("/admin", (req, res) => {
   const sessions = [];
 
   for (const sessionId in req.sessionStore.sessions) {
@@ -104,7 +100,7 @@ app.get("/admin", isAdmin, (req, res) => {
   });
 });
 
-app.post('/admin/:sessionId', isAdmin, (req, res) => {
+app.post('/admin/:sessionId', (req, res) => {
   const sessionId = req.params.sessionId;
   req.sessionStore.destroy(sessionId, (err) => {
     if (err) {

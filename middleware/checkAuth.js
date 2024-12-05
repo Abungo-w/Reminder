@@ -12,7 +12,7 @@ module.exports = {
     if (!req.isAuthenticated()) {
       return next();
     }
-    res.redirect("/dashboard");
+    res.redirect("/reminders");
   },
   isAdmin: async function (req, res, next) {
     const user = await db.user.findUnique({
