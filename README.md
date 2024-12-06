@@ -3,7 +3,7 @@
 Nov 19th, 2024\
 Peter Wu:\
 I worked on the following tasks:
-1. <Insert Some Task Here>Worked on adding the edit function - This task is responsible for allowing the user to edit listed reminders.
+1. <Insert Some Task Here>Worked on adding the upadte function - This task is responsible for allowing the user to update thier reminders.
 
 I also needed to research on Youtube and Google the following things:
 1. <Insert Video or Link to thing you needed to research> The 3 term project prep video on learning hub.
